@@ -1,0 +1,7 @@
+﻿  Sequence.cpp
+c:\users\abraham\desktop\csc326\lab_one\lab_one\sequence.cpp(95): error C2244: 'Sequence<ItemType>::At': unable to match function definition to an existing declaration
+  c:\users\abraham\desktop\csc326\lab_one\lab_one\sequence.cpp(93): note: see declaration of 'Sequence<ItemType>::At'
+  c:\users\abraham\desktop\csc326\lab_one\lab_one\sequence.cpp(95): note: definition
+  c:\users\abraham\desktop\csc326\lab_one\lab_one\sequence.cpp(95): note: 'ItemType &Sequence<ItemType>::At(int)'
+  c:\users\abraham\desktop\csc326\lab_one\lab_one\sequence.cpp(95): note: existing declarations
+  c:\users\abraham\desktop\csc326\lab_one\lab_one\sequence.cpp(95): note: 'ItemType Sequence<ItemType>::At(int)'

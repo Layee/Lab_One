@@ -1,24 +1,46 @@
-#include "Sequence.h"
-#include <string>
 
-template <class ItemType>
-Sequence <ItemType>::Sequence() {
 
-	myarray = new string[10];
+#include<iostream>
+#include<string>
+#include"Sequence.h"
+#include<vector>
+using namespace std;
+
+template<class ItemType>
+Sequence<ItemType>::Sequence() {
+
+	myarray = new ItemType[10];
 	num_used = 0;
 
 }
 
-template <class ItemType>
-Sequence <ItemType>::Sequence(const ItemType& size) {
-	myarray = new string[size];
+template<class ItemType>
+Sequence<ItemType>::Sequence(const ItemType& Size): {
+	myarray = new ItemType[Size];
 	num_used = 0;
 }
 
 
+
+
+
+// check if the container is empty
+template<class ItemType>
+bool Sequence<ItemType>::isEmpty() {
+	if (nume_used == 0) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+
+
+// check if the container is full
 template <class ItemType>
 bool Sequence<ItemType>::isFull() {
-	if (num_used >= array_Capacity) {
+	if (num_used == array_Capacity) {
 		return true;
 	}
 	else {
@@ -26,18 +48,18 @@ bool Sequence<ItemType>::isFull() {
 	}
 }
 
+
+
+// Return the total element being used
 template<class ItemType>
-bool Sequence <ItemType>::isEmpty() {
-	if (array_Capacity == 0) {
-		return true;
-	}
-	else {
-		return false;
-	}
+int Sequence<ItemType>::Size() {
+	return num_used;
 }
 
+
+// Return array capacity
 template<class ItemType>
-int Sequence <ItemType> ::arrayCapacity() {
+int Sequence<ItemType> ::capacity() {
 	int itemSize;
 	for (int i = 0; i < array_Capacity; i++) {
 		itemSize = sizeof(myarray) / sizeof(myarray[0]); // return the size of the array
@@ -46,53 +68,50 @@ int Sequence <ItemType> ::arrayCapacity() {
 }
 
 
+// Return a reference to the first items in the container
+template<class ItemType>
+ItemType& Sequence<ItemType>::front() {}
+
+// Return a reference of the last item in the container
+template<class ItemType>
+ItemType& Sequence <ItemType> :: back(){}
+
+
+// Push item of the back of the array
 template <class ItemType>
-int Sequence <ItemType>::numOfElements() {
+void Sequence<ItemType>::push_back(const ItemType& anEntry) {
 
 }
+
+// remove item from the back of the container
+template<class ItemType>
+void Sequence<ItemType> :: pop_back(ItemType& anEntry) {}
 
 
 
 template<class ItemType>
-int Sequence <ItemType> ::front() {
+ItemType& Sequence<ItemType>::At(int i) {
 
 }
 
 
-template<class ItemType>
-int Sequence <ItemType>:: back() {
 
-}
+// create new size
+template <class ItemType>
+void Sequence<ItemType>::resize(int newSize){}
 
-template<class ItemType>
-void Sequence <ItemType>:: push_back(const ItemType& increment) {
-
-}
-
-
-template<class ItemType>
-void Sequence <ItemType>:: pop_back(const ItemType& decrase) {
-
-}
-
-template<class ItemType>
-int Sequence <ItemType>:: At(const ItemType& returnPosition) {
-
-}
-
-
-template<class ItemType>
-void Sequence <ItemType>::resize(const ItemType & changeCapacity) {
-
-}
 
 
 template <class ItemType>
-void Sequence <ItemType>::insert(const ItemType & insert, ItemType & remove) {
+void Sequence<ItemType>::insert(int i, const ItemType& anEntry){}
 
+
+// Deconstructor - free the memory after the program executed
+template<class ItemType>
+Sequence<ItemType>:: ~Sequence(){
+	delete[] myarray; // free the memory
 }
 
 
 
-template<class ItemType>
-Sequence <ItemType>:: ~Sequence(){}
+

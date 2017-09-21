@@ -1,4 +1,8 @@
 #pragma once
+
+#include<iostream>
+#include<vector>
+using namespace std;
 template <class ItemType>
 class Sequence
 {
@@ -6,24 +10,24 @@ class Sequence
 private:
 	int num_used;
 	int array_Capacity;
-	string * myarray;
+	ItemType * myarray;
 
 
 public:
 	Sequence();
 	Sequence(const ItemType& size);
 	~Sequence();
-	bool isFull();
 	bool isEmpty();
-	int arrayCapacity(); // return array capacity
-	int numOfElements(); // return num of element
-	int front(); // return the front item in the container
-	int back(); // return the back item in the container
-	void push_back(const ItemType& increment);
-	void pop_back(const ItemType& decrease);
-	int At(const ItemType& returnPosition);
-	void resize(const ItemType & changeCapacity);
-	void  insert(const ItemType & insert, ItemType & remove);
+	bool isFull();
+	int capacity(); // return array capacity
+	int Size(); // return num of element
+	ItemType& front(); // return the front item in the container
+	ItemType& back(); // return the back item in the container
+	void push_back(const ItemType& anEntry);
+	void pop_back( ItemType& anEntry);
+	ItemType At(int i);
+	void resize(int newSize);
+	void  insert(int i, const ItemType& anEntry);
 
 
 };
